@@ -1,0 +1,27 @@
+{
+  "name": "csd3",
+  "version": "0.0.1",
+  "authors": [
+    "cmclean@cloudspace.com"
+  ],
+  "description": "collection of d3 javascript classes",
+  "main": "cs-arc.js",
+  "keywords": [
+    "d3",
+    "arc",
+    "graph",
+    "svg"
+  ],
+  "dependencies": {
+    "d3": "~3.5.0"
+  },
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
