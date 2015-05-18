@@ -74,8 +74,8 @@ module.exports = Arc;
 var Arc = require('../arc.js');
 
 var AngularConnector = angular
-  .module('cs-arc', [])
-  .directive(['$timeout', function($timeout) {
+  .module('csArc', [])
+  .directive('csArc', ['$timeout', function($timeout) {
     return {
       restrict: 'E',
       scope: {
