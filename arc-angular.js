@@ -105,13 +105,13 @@ var AngularConnector = angular
       link: function(scope, element, attr, ctrl) {
         $timeout(function() {
           ctrl.initArc({
-            inner: ctrl.inner,
-            outer: ctrl.outer,
-            start: ctrl.start,
-            end: ctrl.end,
-            transition: ctrl.transition,
-            container: ctrl.container,
-            name: ctrl.name  
+            inner: ctrl.inner(),
+            outer: ctrl.outer(),
+            start: ctrl.start(),
+            end: ctrl.end(),
+            transition: ctrl.transition(),
+            container: ctrl.container(),
+            name: ctrl.name()  
           });
           
           ctrl.renderArc();
