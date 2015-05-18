@@ -1,9 +1,12 @@
-/* global angular */
-
-var Arc = require('../arc.js');
+var Arc     = require('./arc.js');
+var angular = require('angular');
+var d3      = require('d3');
 
 var AngularConnector = angular
   .module('csArc', [])
+  .factory('csArc', [function() {
+    return Arc;
+  }])
   .directive('csArc', ['$timeout', function($timeout) {
     return {
       restrict: 'E',
@@ -59,3 +62,5 @@ var AngularConnector = angular
       template: '<svg id="{{ csArc.container() }}"><g></g></svg>'
     };
   }]);
+  
+module.exports = AngularConnector;

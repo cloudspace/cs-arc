@@ -16,13 +16,8 @@ parse JSX source code, making react components possible.
 
 ### Manual Compilation
 
-`npm run-script vanilla`
-`npm run-script angualar-1-x`
-`npm run-script react-0-x`
-
-### Batch Compilation
-
-`npm run-script compile`
+`browserify -t reactify main.jsx > bundle.js`
+`browserify main.js > bundle.js`
 
 ## Usage
 

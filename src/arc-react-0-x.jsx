@@ -1,6 +1,5 @@
-/* global React */
-
-var Arc = require('../arc.js');
+var Arc = require('./arc.js');
+var React = require('react');
 
 var ReactConnector = React.createClass({
   displayName: 'CSArc',
@@ -8,9 +7,10 @@ var ReactConnector = React.createClass({
     inner:      React.PropTypes.number, // inner radius
     outer:      React.PropTypes.number, // outer radius
     start:      React.PropTypes.number, // starting angle
-    end:        React.PropTypes.number, //ending angle
+    end:        React.PropTypes.number, // ending angle
+    width:      React.PropTypes.number, // width of the svg
     transition: React.PropTypes.number, // time in milliseconds
-    container:  React.PtopTypes.string, // container id
+    container:  React.PropTypes.string, // container id
     name:       React.PropTypes.string  // arc id
   },
   updateArc: function(percent) {
@@ -18,6 +18,13 @@ var ReactConnector = React.createClass({
   },
   componentDidMount: function() {
     this.state.arc.render();
+    
+    d3
+      .select('#' + this.state.arc.container)
+      .attr('width', this.props.width)
+      .attr('height', this.props.width)
+      .select('g')
+      .attr('transform',  'translate(' + (this.props.width/2) + ',' + (this.props.width/2) + ')');
   },
   componentDidUpdate: function() {
     this.state.arc.update(this.state.arc.end);
@@ -37,9 +44,9 @@ var ReactConnector = React.createClass({
   },
   render: function() {
     return (
-      <div id={this.state.arc.container}>
-        <svg id={this.state.arc.name}></svg>
-      </div>
+      <svg id={this.state.arc.container}>
+        <g></g>
+      </svg>
     );
   }
 });
