@@ -21,7 +21,7 @@ Arc.arcLength = function(percent) {
 };
 
 Arc.prototype.svg = function() {
-  return d3.select(this.container).select('#' + this.name);
+  return d3.select('#' + this.container).select('#' + this.name);
 };
 
 Arc.prototype.update = function(percent) {
@@ -59,7 +59,7 @@ Arc.prototype.render = function() {
              .startAngle(Arc.arcLength(this.start));
 
   d3
-    .select(this.container)
+    .select('#' + this.container)
     .select('g')
     .append('path')
     .attr('id', this.name)
@@ -88,6 +88,7 @@ var AngularConnector = angular
         name:       '&'
       },
       bindToController: true,
+      controllerAs: 'csArc',
       controller: [function() {
         this.initArc = function(args) {
           this.arc = new Arc(args);
@@ -116,7 +117,7 @@ var AngularConnector = angular
           ctrl.renderArc();
         });
       },
-      template: '<div id=""><svg id=""></svg></div>'
+      template: '<div id="{{ csArc.container }}"><svg id="{{ csArc.name }}"></svg></div>'
     };
   }]);
   
