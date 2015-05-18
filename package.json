@@ -5,10 +5,10 @@
     "d3": "~3.5.0"
   },
   "scripts": {
-    "vanilla":     "browserify src/arc.js > arc-vanilla.js",
+    "es5":         "browserify src/arc.js > arc-es5.js",
     "angular-1-x": "browserify src/connectors/arc-angular-1-x.js > arc-angular.js",
     "react-0-x":   "browserify src/connectors/arc-react-0-x.js -t reactify> arc-react.js",
-    "compile":     "npm run-script vanilla && npm run-script angular-1-x && npm run-script react-0-x"
+    "compile":     "npm run-script es5 && npm run-script angular-1-x && npm run-script react-0-x"
   },
   "devDependencies": {
     "browserify": "10.1.0",

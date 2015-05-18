@@ -1,0 +1,1 @@
+window.Arc = require('../arc.js');
