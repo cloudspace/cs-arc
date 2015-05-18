@@ -20,7 +20,7 @@ Arc.arcLength = function(percent) {
 };
 
 Arc.prototype.svg = function() {
-  return d3.select(this.container).select('#' + this.name);
+  return d3.select('#' + this.container).select('#' + this.name);
 };
 
 Arc.prototype.update = function(percent) {
@@ -58,7 +58,7 @@ Arc.prototype.render = function() {
              .startAngle(Arc.arcLength(this.start));
 
   d3
-    .select(this.container)
+    .select('#' + this.container)
     .select('g')
     .append('path')
     .attr('id', this.name)

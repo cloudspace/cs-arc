@@ -17,6 +17,7 @@ var AngularConnector = angular
         name:       '&'
       },
       bindToController: true,
+      controllerAs: 'csArc',
       controller: [function() {
         this.initArc = function(args) {
           this.arc = new Arc(args);
@@ -45,7 +46,7 @@ var AngularConnector = angular
           ctrl.renderArc();
         });
       },
-      template: '<div id=""><svg id=""></svg></div>'
+      template: '<div id="{{ csArc.container }}"><svg id="{{ csArc.name }}"></svg></div>'
     };
   }]);
   

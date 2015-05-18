@@ -35,7 +35,7 @@ var arc = new Arc({
     start: 0, // starting angle
     end: 1, //ending angle
     transition: 5000 // time in milliseconds
-    container: '#clock', // container id
+    container: 'clock', // container id
     name: 'inner' // arc id
 });
 ```
