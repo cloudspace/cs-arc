@@ -46,7 +46,7 @@ var AngularConnector = angular
           ctrl.renderArc();
         });
       },
-      template: '<div id="{{ csArc.container }}"><svg id="{{ csArc.name }}"></svg></div>'
+      template: '<div id="{{ csArc.container() }}"><svg id="{{ csArc.name() }}"></svg></div>'
     };
   }]);
   
