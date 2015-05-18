@@ -85,11 +85,14 @@ var AngularConnector = angular
         end:        '&',
         transition: '&',
         container:  '&',
-        name:       '&'
+        name:       '&',
+        width:      '&',
       },
       bindToController: true,
       controllerAs: 'csArc',
       controller: [function() {
+        this.translate = 'translate(' + (this.width()/2) + ',' + (this.width()/2) + ')';
+        
         this.initArc = function(args) {
           this.arc = new Arc(args);
         };
@@ -114,12 +117,17 @@ var AngularConnector = angular
             name: ctrl.name()  
           });
           
+          d3
+            .select('#' + ctrl.container())
+            .attr('width', ctrl.width())
+            .attr('height', ctrl.width())
+            .select('g')
+            .attr('transform',  ctrl.translate);
+
           ctrl.renderArc();
         });
       },
-      template: '<div id="{{ csArc.container() }}"><svg id="{{ csArc.name() }}"></svg></div>'
+      template: '<svg id="{{ csArc.container() }}"><g></g></svg>'
     };
   }]);
-  
-module.exports = AngularConnector;
 },{"../arc.js":1}]},{},[2]);
