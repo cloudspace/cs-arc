@@ -1,10 +1,10 @@
 {
-  "name": "csd3",
+  "name": "cs-arc",
   "version": "0.0.1",
   "authors": [
     "cmclean@cloudspace.com"
   ],
-  "description": "collection of d3 javascript classes",
+  "description": "d3 arc class, angular directive, and react component",
   "main": "cs-arc.js",
   "keywords": [
     "d3",
