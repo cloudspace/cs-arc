@@ -4,7 +4,7 @@ module.exports = function(flag) {
 	  require('./arc-angular-1-x.js');
 	  break;
 	case "react-0.X":
-	  require('./arc-react-0-x.js');
+	  require('./arc-react-0-x.jsx');
 	  break;
 	case "es5":
 	  require('./arc.js');
