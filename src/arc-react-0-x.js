@@ -43,11 +43,8 @@ var ReactConnector = React.createClass({
     };
   },
   render: function() {
-    return (
-      <svg id={this.state.arc.container}>
-        <g></g>
-      </svg>
-    );
+    return React.createElement('svg', { id: this.state.arc.container }, 
+                React.createElement('g', null, ''));
   }
 });
 
