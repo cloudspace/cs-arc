@@ -1,5 +1,3 @@
-var d3 = require('d3');
-
 var Arc = function(options) {
   this.inner = options.inner;
   this.outer = options.outer;
@@ -14,7 +12,7 @@ var Arc = function(options) {
  * http://tauday.com/tau-manifesto
  * https://www.youtube.com/watch?v=jG7vhMMXagQ
  */
- 
+
 Arc.arcLength = function(percent) {
   return percent * 2 * Math.PI;
 };
