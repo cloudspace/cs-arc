@@ -1,24 +1,5 @@
 #CS-Arc
 
-## Setup
-
-## Development
-
-This works off of a connector pattern. This package currently
-supports Angular 1.X, React 0.X, and vanilla JavaScript. Using
-browserify and transforms, we create our framework specific
-files.
-
-### Browserify React
-
-Browserify react is a transform for Browserify that allows the tool to
-parse JSX source code, making react components possible.
-
-### Manual Compilation
-
-`browserify -t reactify main.jsx > bundle.js`
-`browserify main.js > bundle.js`
-
 ## Usage
 
 ### Arc
